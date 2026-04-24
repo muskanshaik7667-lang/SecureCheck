@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Strength Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>🔐SecureCheck- Password Strength Analyzer</h1>
+
+    <div class="input-row">
+      <input type="password" id="password-input" placeholder="Enter a password..." autocomplete="off" spellcheck="false" />
+      <button id="toggle-visibility" title="Show/hide">👁️</button>
+      <button id="generate-btn">Generate</button>
+    </div>
+
+    <div class="strength-track">
+      <div id="strength-bar"></div>
+    </div>
+    <div class="strength-meta">
+      <span id="strength-label"></span>
+      <span id="entropy"></span>
+    </div>
+
+    <section>
+      <h2>Feedback</h2>
+      <ul id="feedback-list"></ul>
+    </section>
+
+    <section>
+      <h2>Breach Check</h2>
+      <div id="breach-status" class="status"></div>
+    </section>
+
+    <section>
+      <h2>Password Reuse</h2>
+      <div id="reuse-status" class="status"></div>
+      <button id="save-btn">Save to History</button>
+    </section>
+
+    <section>
+      <h2>Stronger Alternatives</h2>
+      <div id="suggestions"></div>
+    </section>
+
+    <section>
+      <h2>Password History <span id="history-count" class="muted"></span></h2>
+      <table id="history-table" style="display:none">
+        <thead>
+          <tr><th>Label</th><th>Saved At</th><th></th></tr>
+        </thead>
+        <tbody id="history-body"></tbody>
+      </table>
+      <div class="history-footer">
+        <button id="clear-history">Clear all history</button>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
